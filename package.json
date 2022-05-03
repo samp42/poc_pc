@@ -1,0 +1,7 @@
+{
+  "name": "CppProjectTemplate",
+  "packageManager": "yarn@3.1.1",
+  "devDependencies": {
+    "@bazel/bazel": "5.0.0"
+  }
+}

@@ -1,0 +1,11 @@
+# bazel
+# --color yes
+
+# cc
+# Use custom crosstool
+# build --crosstool_top=//tools/cpp:toolchain
+test --test_output=all
+test --cxxopt='-std=c++2a'
+build --cxxopt='-std=c++2a'
+run --cxxopt='-std=c++2a'
+
