@@ -1,0 +1,8 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+cc_library(
+    name = "eigen",
+    linkstatic = True,
+    srcs = glob(["eigen/Eigen/**/*.h"]),
+    visibility = ["//visibility:public"],
+)

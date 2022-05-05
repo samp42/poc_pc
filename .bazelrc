@@ -1,5 +1,4 @@
 # bazel
-# --color yes
 
 # cc
 # Use custom crosstool

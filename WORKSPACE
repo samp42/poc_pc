@@ -1,4 +1,4 @@
-workspace(name = 'CppProjectTemplate')
+workspace(name = 'poc_pc')
 
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
@@ -27,13 +27,6 @@ yarn_install(
     yarn_lock = "//:yarn.lock",
 )
 
-# http_archive(
-#     name = "gazebo_sim",
-#     build_file = "deps/gazebo_sim.BUILD",
-#     sha256 = "3c823e3ed6fbf79a23663eade5f33460c5334dde3b99e376dcb69fa2561886f5",
-#     urls = ["http://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.0.0.tar.bz2"],
-# )
-
 http_archive(
     name = "com_github_gflags_gflags",
     sha256 = "34af2f15cf7367513b352bdcd2493ab14ce43692d2dcd9dfc499492966c64dcf",
@@ -48,37 +41,17 @@ http_archive(
     urls = ["https://github.com/google/glog/archive/v0.5.0.zip"],
 )
 
-http_archive{
+http_archive(
     name = "google_benchmark",
     sha256 = "",
-    strip_prefix = ""
+    strip_prefix = "",
     urls = ["https://github.com/google/benchmark/archive/refs/tags/v1.6.1.tar.gz"],
-}
-
-# http_archive(
-#     name = "qt",
-#     sha256 = "f784998a159334d1f47617fd51bd0619b9dbfe445184567d2cd7c820ccb12771",
-#     # strip_prefix = "qt-everywhere-src-6.2.3",
-#     build_file_content = """
-# cc_library(
-#     name = 'qt',
-#     visibility = ['//visibility:public'],
-#     hdrs = glob(['**/*.h']),
-# )
-#     """,
-#     urls = ["https://download.qt.io/archive/qt/6.2/6.2.3/single/qt-everywhere-src-6.2.3.tar.xz"],
-# )
-
-new_local_repository(
-    name = "qt",
-    path = "/usr/local",
-    build_file = "deps/qt.BUILD"
 )
 
 new_local_repository(
-    name = "opencv",
-    path = "/usr/local",
-    build_file = "deps/opencv.BUILD",
+    name = "eigen",
+    path = "third_party/eigen",
+    build_file = "third_party/eigen/BUILD.bazel"
 )
 
 new_local_repository(
